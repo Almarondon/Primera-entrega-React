@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "nombre": "Resveratrol",
+        "descripcion": "descripción",
+        "precio": 20000,
+        "imageSrc": "images/producto-1.png",
+        "categoryId": "hidratantes"
+    },
+    {
+        "id": 2,
+        "nombre": "Age Complex",
+        "descripcion": "descripción",
+        "precio": 25000,
+        "imageSrc": "images/producto-2.png",
+        "categoryId": "hidratantes"
+    },
+    {
+        "id": 3,
+        "nombre": "Aox eye gel",
+        "descripcion": "descripción",
+        "precio": 31500,
+        "imageSrc": "images/producto-3.png",
+        "categoryId": "hidratantes"
+    },
+    {
+        "id": 4,
+        "nombre": "Blemish Age Cleanser",
+        "descripcion": "descripción",
+        "precio": 22000,
+        "imageSrc": "images/producto-4.png",
+        "categoryId": "hidratantes"
+    },
+    {
+        "id": 5,
+        "nombre": "Blemish Age Defense",
+        "descripcion": "descripción",
+        "precio": 35000,
+        "imageSrc": "images/producto-5.png",
+        "categoryId": "hidratantes"
+    },
+    {
+        "id": 6,
+        "nombre": "Ferulic",
+        "descripcion": "descripción",
+        "precio": 38000,
+        "imageSrc": "images/producto-6.png",
+        "categoryId": "regeneradores"
+    },
+    {
+        "id": 7,
+        "nombre": "Phyto Corrective",
+        "descripcion": "descripción",
+        "precio": 29000,
+        "imageSrc": "images/producto-7.png",
+        "categoryId": "regeneradores"
+    },
+    {
+        "id": 8,
+        "nombre": "Epidermal Repair",
+        "descripcion": "descripción",
+        "precio": 32000,
+        "imageSrc": "images/producto-8.png",
+        "categoryId": "regeneradores"
+    },
+    {
+        "id": 9,
+        "nombre": "Intensifier",
+        "descripcion": "descripción",
+        "precio": 27000,
+        "imageSrc": "images/producto-9.png",
+        "categoryId": "regeneradores"
+    },
+    {
+        "id": 10,
+        "nombre": "Physical Fusion UV Defense",
+        "descripcion": "descripción",
+        "precio": 30000,
+        "imageSrc": "images/producto-10.png",
+        "categoryId": "regeneradores"
+    }
+]

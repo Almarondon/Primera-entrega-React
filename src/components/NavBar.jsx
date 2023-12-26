@@ -1,36 +1,47 @@
 import CardWidget from "./CartWidget"
-import { Flex, Spacer, Box, Menu, MenuButton, MenuList, MenuItem, Button, Stack, Image } from '@chakra-ui/react'
-import { ChevronDownIcon } from "@chakra-ui/icons"
+import { Flex, Spacer, Box, Image, Link, Select } from '@chakra-ui/react'
+
+import { Link as LinkRouter, useNavigate  } from "react-router-dom"
+
+import almalogo from '../../public/images/almalogo.png'
 
 const NavBar = () => {
+    const navigate = useNavigate();
+
+    const changeCategory = (evt) => {
+        navigate(`category/${evt.target.value}`)
+    }
+
     return (
-        <Flex sx={{
+        <Flex minWidth='max-content' alignItems='center' marginBottom={3} gap='2' sx={{
             backgroundColor: "rgb(240, 229, 229)"
         }}>
-            <Box >
-                <Stack direction='row'>
-                    <Image
-                        fit={"cover"}
-                        htmlWidth={200}
-                        src='https://almarondon.github.io/entrega-final/images/almalogo.png'
-                        alt='Dan Abramov'
-                    />
-                </Stack>
+            <Box p={2}>
+                <Image
+                    fit={"cover"}
+                    htmlWidth={200}
+                    src={almalogo}
+                    alt='Alma'
+                />
             </Box>
             <Spacer />
-            <Menu>
-                <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                    Idiomas
-                </MenuButton>
-                <MenuList>
-                    <MenuItem>🇪🇸 Español</MenuItem>
-                    <MenuItem>🇺🇸 English</MenuItem>
-                </MenuList>
-            </Menu>
-            <Box >
+            <Box p={2}>
+                <Link variant={"unstyled"} as={LinkRouter} to='/'>Inicio</Link>
+            </Box>
+            <Box p={2}>
+                <Link variant={"unstyled"} as={LinkRouter} to='/products'>Productos</Link>
+            </Box>
+            <Box p={2}>
+                <Select variant={"unstyled"} onChange={changeCategory} placeholder="Categorías">
+                    <option value={"hidratantes"}>Hidratantes</option>
+                    <option value={"regeneradores"}>Regeneradores</option>
+                </Select>
+            </Box>
+            <Spacer />
+            <Box p={2}>
                 <CardWidget />
             </Box>
-        </Flex>
+        </Flex >
     )
 }
 
