@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { Container } from '@chakra-ui/react'
-import ItemList from "./ItemList"
+import ItemList from "../components/ItemList"
 import { fetchProducts } from "../api/services";
 
 const ProductsContainer = () => {

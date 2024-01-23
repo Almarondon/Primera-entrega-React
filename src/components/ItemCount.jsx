@@ -4,9 +4,9 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 import useCounter from '../hooks/useCounter'
 
 const ItemCount = (props) => {
-    const { onClick } = props
+    const { onClick, counter = 0 } = props
     const [ operation, setOperation ] = useState();
-    const { contador, suma, resta } = useCounter();
+    const { contador, suma, resta } = useCounter(counter);
 
     useEffect(() => {
         if(typeof onClick !== "undefined") {

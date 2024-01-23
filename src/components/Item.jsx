@@ -46,7 +46,7 @@ const Item = ({ id, titulo, descripcion, precio, imageSrc }) => {
       </CardBody>
       <Divider />
       <CardFooter justifyContent={"center"}>
-        <ItemCount onClick={handlerCounter} />
+        <ItemCount onClick={handlerCounter} counter={cartContext.getQtyByProductId(id)} />
       </CardFooter>
     </Card>)
 }

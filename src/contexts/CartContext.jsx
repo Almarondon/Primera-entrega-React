@@ -18,6 +18,13 @@ const CartContextProvider = ({ children }) => {
         setCartList(items);
     }
 
+    const getQtyByProductId = (id) => {
+        return cartList
+            .filter(r => r.item.id === id)
+            .map(r => r.qty)
+            .reduce((pv, cv) => pv + cv, 0);
+    }
+
     const getQty = () => {
         const qty = cartList.map(r => r.qty).reduce((pv, cv) => (pv + cv), 0);
         return qty;
@@ -49,7 +56,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ cartList, addToCart, updateCart, cleanCart, getQty }}>
+        <CartContext.Provider value={{ cartList, addToCart, updateCart, cleanCart, getQty, getQtyByProductId }}>
             {children}
         </CartContext.Provider>
     )
