@@ -1,17 +1,27 @@
-export const fetchProducts = async (categoryId) => {
-    const response = await fetch(`${window.location.origin}/data/productos.JSON`);
-    const json = await response.json();
+import { getDocs, getDoc, getFirestore, collection, where, query } from 'firebase/firestore'
 
-    return json.map((r) => ({
-        ...r,
-        imageSrc: `${window.location.origin}/${r.imageSrc}`
-    })).filter(r => {
-        return categoryId == undefined || r.categoryId == categoryId
+export const fetchProducts = async (categoryId) => {
+    const db = getFirestore();
+    const conditionProducts = where('categoryId', '==', categoryId)
+    const collectionProducts = collection(db, 'items');
+    const queryProducts = query(collectionProducts, conditionProducts)
+
+    const snapshot = await getDocs(queryProducts);
+
+    return snapshot.docs.map((doc) => {
+        const data = {
+            id: doc.id,
+            ...doc.data()
+        };
+
+        return {
+            ...data,
+            imageSrc: `${window.location.origin}/${data.imageSrc}`
+        }
     });
 }
 
 export const fetchProductById = async (id) => {
-    const products = await fetchProducts(undefined);
-    
-    return products.find(r => r.id == id);
+    const products =  await getDoc(id)
+    return products;
 }

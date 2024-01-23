@@ -10,9 +10,9 @@ const ItemList = ({ productos = [] }) => {
           return (<GridItem key={`item-${i}`}>
             <Item
               id={p.id}
-              titulo={p.nombre}
-              descripcion={p.descripcion}
-              precio={p.precio}
+              titulo={p.name}
+              descripcion={p.description}
+              precio={p.price}
               imageSrc={p.imageSrc}
             />
           </GridItem>

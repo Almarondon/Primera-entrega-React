@@ -38,7 +38,7 @@ const NavBar = () => {
                 </Select>
             </Box>
             <Spacer />
-            <Box p={2}>
+            <Box p={2} mr={3}>
                 <CardWidget />
             </Box>
         </Flex >

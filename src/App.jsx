@@ -3,11 +3,12 @@ import ProductsContainer from "./components/ProductsContainer"
 import NavBar from "./components/NavBar"
 import ProductDetailContainer from './components/ProductDetailContainer'
 import HomeContainer from './components/HomeContainer'
+import CartContextProvider from './contexts/CartContext';
 
 const App = () => {
   const messageGreeting = "Bienvenidos"
 
-  return (
+  return (<CartContextProvider>
     <BrowserRouter>
       <NavBar />
       <Routes>
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='details/:productId' element={<ProductDetailContainer />} />
       </Routes>
     </BrowserRouter>
+  </CartContextProvider>
   )
 }
 

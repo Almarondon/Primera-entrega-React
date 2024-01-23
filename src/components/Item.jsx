@@ -1,8 +1,26 @@
+import { useContext } from 'react'
 import { Card, CardBody, Stack, Heading, Image, Divider, CardFooter, Text, Center } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
+import { CartContext } from '../contexts/CartContext';
 import { Link } from 'react-router-dom'
 
 const Item = ({ id, titulo, descripcion, precio, imageSrc }) => {
+  const cartContext = useContext(CartContext);
+
+  const handlerCounter = (qty, operation) => {
+    if (operation === "add") {
+      cartContext.addToCart({
+        id,
+        name: titulo,
+        description: descripcion,
+        price: precio
+      }, qty);
+    }
+    else if (operation === "subtract") {
+      cartContext.updateCart(id, qty);
+    }
+  }
+
   return (
     <Card maxWidth='sm' height={"460px"}>
       <CardBody>
@@ -28,7 +46,7 @@ const Item = ({ id, titulo, descripcion, precio, imageSrc }) => {
       </CardBody>
       <Divider />
       <CardFooter justifyContent={"center"}>
-        <ItemCount />
+        <ItemCount onClick={handlerCounter} />
       </CardFooter>
     </Card>)
 }

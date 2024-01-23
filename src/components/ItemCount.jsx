@@ -1,15 +1,28 @@
+import { useEffect, useState } from 'react';
 import { Button, ButtonGroup } from '@chakra-ui/react'
+
 import useCounter from '../hooks/useCounter'
 
-const ItemCount = () => {
-    const counter = useCounter();
+const ItemCount = (props) => {
+    const { onClick } = props
+    const [ operation, setOperation ] = useState();
+    const { contador, suma, resta } = useCounter();
+
+    useEffect(() => {
+        if(typeof onClick !== "undefined") {
+            onClick(contador, operation)
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [contador, operation])
 
     const sumar = () => {
-        counter.suma()
+        suma()
+        setOperation("add");
     }
 
     const restar = () => {
-        counter.resta()
+        resta()
+        setOperation("subtract")
     }
 
     return (
@@ -18,7 +31,7 @@ const ItemCount = () => {
                 +
             </Button>
             <Button>
-                Agregar ({counter.contador})
+                Agregar ({contador})
             </Button>
             <Button colorScheme='teal' onClick={restar}>
                 -
