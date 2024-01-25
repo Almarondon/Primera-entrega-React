@@ -7,7 +7,7 @@ import CartContextProvider from './contexts/CartContext';
 import CheckoutContainer from './modules/CheckoutContainer'
 
 const App = () => {
-  const messageGreeting = "Bienvenidos"
+  const messageGreeting = "Skinceuticals"
 
   return (<CartContextProvider>
     <BrowserRouter>
