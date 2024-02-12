@@ -4,7 +4,7 @@ import { Container } from '@chakra-ui/react'
 import ItemList from "../components/ItemList"
 import { fetchProducts } from "../api/services";
 
-const ProductsContainer = () => {
+const ItemListContainer = () => {
     const params = useParams();
     const [products, setProducts] = useState();
 
@@ -21,4 +21,4 @@ const ProductsContainer = () => {
     )
 }
 
-export default ProductsContainer
+export default ItemListContainer

@@ -4,7 +4,7 @@ import { fetchProductById } from "../api/services";
 import { ItemDetail } from "../components/ItemDetail";
 import { CartContext } from "../contexts/CartContext";
 
-const ProductDetailContainer = () => {
+const ItemDetailContainer = () => {
     const cartContext = useContext(CartContext);
     const params = useParams();
     const back = () => {
@@ -29,4 +29,4 @@ const ProductDetailContainer = () => {
     )
 }
 
-export default ProductDetailContainer
+export default ItemDetailContainer
